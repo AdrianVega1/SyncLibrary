@@ -30,5 +30,5 @@ el usuario debe ejecutar los siguientes comandos:
 
 # Compilación
 * Para compilar el programa:
-gcc -g main.c -o main
+gcc -o main main.c sync.h
 
