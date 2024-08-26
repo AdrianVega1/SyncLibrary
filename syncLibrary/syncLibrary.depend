@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1724711470 source:c:\tec\principios de sistemas operativos\synclibrary\main.c
+	"sync.h"
+	<pthread.h>
+	<stdio.h>
+
+1724711635 c:\tec\principios de sistemas operativos\synclibrary\include\sync.h
+	<pthread.h>
+	<stdio.h>
+	<unistd.h>
+
