@@ -24,7 +24,7 @@ Esta biblioteca está implementada en el lenguaje C y utiliza los threads y mute
 Para correr el programa el usuario tiene que abrir una terminal en
 el folder donde se encuentra el código. Para que estar seguro de que
 el usuario está en el folder correcto, debería poder ver unos archivos
-llamados main.c, makefile, semaphore.h, barrera.c, barrera.h, etc. 
+llamados main.c, semaphore.h, barrera.c, barrera.h, etc. 
 Una vez que ya esté dentro del folder y con la terminal abierta, 
 el usuario debe ejecutar los siguientes comandos:
 
@@ -32,5 +32,3 @@ el usuario debe ejecutar los siguientes comandos:
 * Para compilar el programa:
 gcc -g main.c -o main
 
-* O:
-make
