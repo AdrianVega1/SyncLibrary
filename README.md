@@ -31,6 +31,6 @@ el usuario debe ejecutar los siguientes comandos:
 # Compilación
 * Para compilar el programa:
 gcc -o main main.c sync.h
-* Luego para correr el programa>
+* Luego para correr el programa:
 ./main
 
