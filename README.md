@@ -15,7 +15,7 @@ Profesor:
 
 ## Biblioteca Sync
 # Descripción:
-En el código en este proyecto se encuentra una biblioteca "sync" que contiene las siguientes estructuras de sincronización:
+En el código de este proyecto se encuentra una biblioteca "sync" que contiene las siguientes estructuras de sincronización:
 -Semáforo
 -Barrera
 -Read/Write Lock
