@@ -80,6 +80,13 @@ que el hilo escriba en el recurso compartido. Luego, se libera el mutex y se sal
 escritor_activo se restablece a 0, lo que indica que el recurso compartido está disponible para otros lectores
 o escritores. Luego, se libera el mutex.
 
+Para utilizar esta estructura, primero se debe llamar a la función mi_rwlock_init() con la dirección de memoria 
+de la estructura mi_rwlock que se utilizará. Un hilo que desee leer debe llamar a adquirir_lock_lectura() antes 
+de acceder al recurso y liberar_lock_lectura() después de haber terminado. De manera similar, un hilo que desee 
+escribir debe llamar a adquirir_lock_escritura() antes de acceder al recurso y liberar_lock_escritura() después 
+de haber terminado. Esta implementación permite que múltiples hilos lean simultáneamente, pero restringe la 
+escritura a un solo hilo a la vez, asegurando que los datos permanezcan consistentes y libres de condiciones de 
+carrera.
 
 # Compilación
 * Para compilar el programa:
