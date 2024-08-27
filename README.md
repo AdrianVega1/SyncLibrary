@@ -37,6 +37,7 @@ ningún recurso restante, el hilo se queda dentro de un ciclo while hasta que se
 un recurso. 
 * Por otro lado, la función signalSem, simplemente incrementa la cantidad de
 recursos disponibles. Esto se realiza cuando ya el hilo terminó su ejecución.
+
 Para la utilización de esta estructura es necesario primero llamar la función semaphore_init()
 con la dirección de memoria del semáforo a utilizar y la cantidad de recursos disponibles. Luego,
 simplemente se usa la función waitSem() cuando el hilo tenga que ejecutar y al final de la ejecución
