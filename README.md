@@ -26,7 +26,21 @@ el folder donde se encuentra el código. Para que estar seguro de que
 el usuario está en el folder correcto, debería poder ver unos archivos
 llamados main.c y sync.h. 
 Una vez que ya esté dentro del folder y con la terminal abierta, 
-el usuario debe ejecutar los siguientes comandos:
+el usuario debe ejecutar los comandos especificados en la sección de Compilación.
+
+# Semáforo
+Esta estructura se implementó mediante dos funciones principales, waitSem y signalSem.
+
+La función de waitSem se utiliza cuando un hilo va a hacer uso de los recursos para 
+su ejecución, lo que decrementa la cantidad de recursos restantes. En caso de no haber
+ningún recurso restante, el hilo se queda dentro de un ciclo while hasta que se libere 
+un recurso. 
+Por otro lado, la función signalSem, simplemente incrementa la cantidad de
+recursos disponibles. Esto se realiza cuando ya el hilo terminó su ejecución.
+Para la utilización de esta estructura es necesario primero llamar la función semaphore_init()
+con la dirección de memoria del semáforo a utilizar y la cantidad de recursos disponibles. Luego,
+simplemente se usa la función waitSem() cuando el hilo tenga que ejecutar y al final de la ejecución
+se utiliza signalSem().
 
 # Compilación
 * Para compilar el programa:
