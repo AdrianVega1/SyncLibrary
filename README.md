@@ -49,7 +49,7 @@ se utiliza signalSem().
 # Barrera
 
 Esta estructura tiene una función principal la cual es barrier_wait().
-* Esta función es la clave del funcionamiento de la barrera. Cuando un hilo llega a la barrera, llama a
+* barrier_wait() es la función clave del funcionamiento de la barrera. Cuando un hilo llega a la barrera, llama a
 barrier_wait(). Primero, la función realiza un mutex_lock para garantizar que solo un hilo acceda a la
 barrera a la vez. Luego, incrementa el contador de hilos que han llegado. Si el contador alcanza el número
 total de hilos esperados, la barrera se rompe y todos los hilos que estaban esperando son desbloqueados
@@ -63,6 +63,22 @@ que todos los hilos han terminado, se utiliza barrier_destroy() para limpiar los
 
 # Read/Write-Lock
 
+Esta estructura está compuesta de 4 funciones principales: adquirir_lock_lectura, liberar_lock_lectura, 
+adquirir_lock_escritura, y liberar_lock_escritura.
+* La funcion adquirir_lock_lectura() permite que un hilo adquiera un bloqueo de lectura. El hilo entra en un bucle
+donde primero adquiere el mutex para verificar si hay un escritor activo. Si no hay ningún escritor activo, el
+contador de lectores se incrementa, permitiendo que el hilo lea el recurso compartido. Luego, se libera el mutex
+y se sale del bucle. Si hay un escritor activo, el hilo libera el mutex y vuelve a intentar.
+* La función liberar_lock_lectura() se ejecuta después de que un hilo ha terminado de leer el recurso. El contador
+de lectores se decrementa bajo el mutex para asegurar la consistencia. Esto indica que un lector ha terminado su
+lectura, permitiendo potencialmente a un escritor comenzar a escribir si ya no quedan lectores activos.
+* La función adquirir_lock_escritura() permite que un hilo adquiera un bloqueo de escritura. Similar al bloqueo de
+lectura, el hilo entra en un bucle donde adquiere el mutex para verificar si hay lectores activos o si ya hay un
+escritor activo. Si no hay lectores ni escritores activos, el flag escritor_activo se establece en 1, permitiendo
+que el hilo escriba en el recurso compartido. Luego, se libera el mutex y se sale del bucle.
+* La función liberar_lock_escritura() se ejecuta después de que un hilo ha terminado de escribir. El flag
+escritor_activo se restablece a 0, lo que indica que el recurso compartido está disponible para otros lectores
+o escritores. Luego, se libera el mutex.
 
 
 # Compilación
