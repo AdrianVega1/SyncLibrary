@@ -61,7 +61,7 @@ barrier_wait() para sincronizar los hilos. Todos los hilos llamarán a esta func
 hasta que todos hayan llegado, momento en el cual se desbloquean y continúan su ejecución. Finalmente, una vez 
 que todos los hilos han terminado, se utiliza barrier_destroy() para limpiar los recursos utilizados por la barrera.
 
-# Read/Write Lock
+# Read/Write-Lock
 
 
 
