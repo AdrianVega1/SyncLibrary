@@ -89,8 +89,10 @@ escritura a un solo hilo a la vez, asegurando que los datos permanezcan consiste
 carrera.
 
 # Compilación
+*Se utilizó una máquina con Fedora y GCC instalado. De no tener el GCC instalado, recurra al siguiente enlace:
+https://developer.fedoraproject.org/tech/languages/c/c_installation.html
 * Para compilar el programa:
-gcc -o main main.c sync.h
+gcc -o main main.c sync.h -pthread
 * Para correr el programa:
 ./main
 
