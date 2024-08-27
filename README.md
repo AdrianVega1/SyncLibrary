@@ -13,6 +13,8 @@ Profesor:
 - [Descripción](#Descripción)
 - [Compilación](#Compilación)
 - [Semáforo](#Semáforo)
+- [Barrera](#Barrera)
+- [Read/Write Lock](#Read/Write Lock)
 
 ## Biblioteca Sync
 # Descripción:
