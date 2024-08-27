@@ -14,7 +14,7 @@ Profesor:
 - [Compilación](#Compilación)
 - [Semáforo](#Semáforo)
 - [Barrera](#Barrera)
-- [Read/Write-Lock](#read/write-lock)
+- [Read/Write-Lock](#ReadWrite-Lock)
 
 ## Biblioteca Sync
 # Descripción:
